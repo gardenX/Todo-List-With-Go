@@ -2,32 +2,37 @@ package main
 
 import "fmt"
 
-func AddList(param1 string) {
-	var add = [...]string{
-		param1,
+func dtAddList() {
+
+}
+
+func AddList(param int) {
+	if param == 1 {
+		var param string
+		fmt.Print("Masukan Nama Tugas :")
+		fmt.Scanln(&param)
+
+		var add = [...]string{
+			param,
+		}
+		var dtlist = add[:]
+		fmt.Println(dtlist)
+	} else {
+		fmt.Println("2")
 	}
-	var dtlist = add[:]
-	fmt.Println(dtlist)
 }
 
 func proccesAct(params int) {
-	for {
-		switch params {
-		case 1:
-			var param string
-			fmt.Print("Masukan Nama Tugas :")
-			fmt.Scanln(&param)
-			AddList(param)
-			fmt.Println("ditambahkan sebagai Tugas !")
-			actList()
-		case 2:
-			fmt.Println("B")
-		case 3:
-			fmt.Println("C")
-		case 4:
-			fmt.Println("D")
-		case 5:
-		}
+	switch params {
+	case 1:
+		AddList(params)
+	case 2:
+		fmt.Println("B")
+	case 3:
+		fmt.Println("C")
+	case 4:
+		fmt.Println("D")
+	case 5:
 	}
 }
 
