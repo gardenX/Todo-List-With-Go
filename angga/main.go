@@ -18,7 +18,7 @@ func AddList(param int) {
 		var dtlist = add[:]
 		fmt.Println(dtlist)
 	} else {
-		fmt.Println("2aa")
+		fmt.Println("2aagit ")
 	}
 }
 
