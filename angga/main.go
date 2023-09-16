@@ -18,7 +18,7 @@ func proccesAct(params int) {
 			fmt.Print("Masukan Nama Tugas :")
 			fmt.Scanln(&param)
 			AddList(param)
-			fmt.Println("ditambahkan sebagai Tugas !")
+			fmt.Println("ditambahkan sebagai tugas !")
 			actList()
 		case 2:
 			fmt.Println("B")
