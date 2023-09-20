@@ -33,6 +33,25 @@ func AddList(slc1 []string) []string {
 	return slc1
 }
 
+func ViewList(slc1 []string) []string {
+	fmt.Println("Daftar Tugas:")
+	for i := 0; i < len(slc1); i++ {
+		fmt.Println(i+1, ".", slc1[i], "- Belum Selesai")
+	}
+	return slc1
+}
+
+func MarkList(slc1 []string) {
+	ViewList(slc1)
+
+	fmt.Print("Pilih Daftar Tugas :")
+	var NumList int
+	fmt.Scanln(&NumList)
+
+	slc1[NumList] = "Selesai"
+	fmt.Print(slc1)
+}
+
 func actList() {
 	fmt.Println("=== To-DO List ====")
 	fmt.Println("1. Tambah Tugas")
@@ -43,11 +62,12 @@ func actList() {
 }
 
 func Main() {
-	actList()
 
 	var slc1 []string
 
 	for {
+		actList()
+
 		var act int
 		fmt.Print("Pilih Operasi (1/2/3/4/5) :")
 		fmt.Scanln(&act)
@@ -55,9 +75,15 @@ func Main() {
 		switch act {
 		case 1:
 			slc1 = AddList(slc1)
+			fmt.Println("Tugas Di Tambahkan !")
+			fmt.Println("")
+			fmt.Println("")
 		case 2:
-			fmt.Println(slc1)
+			ViewList(slc1)
+			fmt.Println("")
+			fmt.Println("")
 		case 3:
+			MarkList(slc1)
 			fmt.Println("C")
 		case 4:
 			fmt.Println("D")
