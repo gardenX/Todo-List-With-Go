@@ -36,7 +36,7 @@ func AddList(slc1 []string) []string {
 func ViewList(slc1 []string) []string {
 	fmt.Println("Daftar Tugas:")
 	for i := 0; i < len(slc1); i++ {
-		fmt.Println(i+1, ".", slc1[i], "- Belum Selesai")
+		fmt.Println(i+1, slc1[i], "- Belum Selesai")
 	}
 	return slc1
 }
@@ -47,10 +47,25 @@ func MarkList(slc1 []string) {
 	fmt.Print("Pilih Daftar Tugas :")
 	var NumList int
 	fmt.Scanln(&NumList)
-
-	slc1[NumList] = "Selesai"
-	fmt.Print(slc1)
+	NumList = NumList - 1
+	slc1[NumList] = slc1[NumList] + " - Selesai"
+	for i := 0; i < len(slc1); i++ {
+		fmt.Println(i+1, slc1[i])
+	}
 }
+
+//func DelList(slc1 []string) {
+//	fmt.Print("Pilih Daftar Tugas :")
+//	var NumList int
+//	fmt.Scanln(&NumList)
+//
+//	var indDel int = NumList - 1
+//
+//	//dtSlc := slc1[indDel]
+//
+//	slc1 = append(slc1[:indDel], slc1[indDel+1:]...)
+//	ViewList(slc1)
+//}
 
 func actList() {
 	fmt.Println("=== To-DO List ====")
@@ -84,9 +99,20 @@ func Main() {
 			fmt.Println("")
 		case 3:
 			MarkList(slc1)
-			fmt.Println("C")
 		case 4:
-			fmt.Println("D")
+			//DelList(slc1)
+			//fmt.Println("")
+			//fmt.Println("")
+			fmt.Print("Pilih Daftar Tugas :")
+			var NumList int
+			fmt.Scanln(&NumList)
+
+			var indDel int = NumList - 1
+
+			//dtSlc := slc1[indDel]
+
+			slc1 = append(slc1[:indDel], slc1[indDel+1:]...)
+			ViewList(slc1)
 		case 5:
 			os.Exit(0)
 		}
