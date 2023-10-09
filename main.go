@@ -5,6 +5,7 @@ import (
 )
 
 func main() {
-	// agung.Main()
 	angga.Main()
+	//agung.Main()
+	//contact.Main()
 }
